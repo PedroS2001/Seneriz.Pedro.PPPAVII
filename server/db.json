@@ -1,0 +1,102 @@
+{
+  "tipos": [
+    {
+      "id": 1,
+      "descripcion": "Perro"
+    },
+    {
+      "id": 2,
+      "descripcion": "Gato"
+    },
+    {
+      "id": 3,
+      "descripcion": "Reptil"
+    },
+    {
+      "id": 4,
+      "descripcion": "Pez"
+    },
+    {
+      "id": 5,
+      "descripcion": "Roedor"
+    }
+  ],
+  "mascotas": [
+    {
+      "id": 1,
+      "nombre": "Bobby",
+      "edad": 9,
+      "tipo": "Perro",
+      "vacunado": true,
+      "observaciones": "Bobby se porta muy bien esta contento siempre"
+    },
+    {
+      "id": 3,
+      "nombre": "Lolo",
+      "edad": 2,
+      "tipo": "Roedor",
+      "vacunado": false,
+      "observaciones": "Cuidado que muerde"
+    },
+    {
+      "id": 4,
+      "nombre": "Colita",
+      "edad": 6,
+      "tipo": "Perro",
+      "vacunado": true,
+      "observaciones": "Mea por todos lados"
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro",
+      "edad": "33",
+      "tipo": "Perro"
+    },
+    {
+      "id": 10,
+      "nombre": "asdasddsa",
+      "edad": "231",
+      "tipo": "Gato"
+    },
+    {
+      "id": 11,
+      "nombre": "Pedro",
+      "edad": "123",
+      "tipo": "Roedor",
+      "vacunado": "true",
+      "observaciones": "Observacionesssadsadsasd"
+    },
+    {
+      "id": 14,
+      "nombre": "ads",
+      "edad": "2",
+      "tipo": "Gato",
+      "vacunado": "true",
+      "observaciones": "dsssdsaadsdsa"
+    },
+    {
+      "id": 15,
+      "nombre": "Juan martin",
+      "edad": "99",
+      "tipo": "Reptil",
+      "vacunado": "true",
+      "observaciones": "Es un reptil muy vago"
+    },
+    {
+      "id": 17,
+      "nombre": "Caperucita",
+      "edad": "0",
+      "tipo": "Pez",
+      "vacunado": false,
+      "observaciones": "caperucita red"
+    },
+    {
+      "id": 18,
+      "nombre": "addsa",
+      "edad": "2",
+      "tipo": "Perro",
+      "vacunado": false,
+      "observaciones": "23132"
+    }
+  ]
+}
