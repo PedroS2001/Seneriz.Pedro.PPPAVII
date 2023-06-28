@@ -47,18 +47,6 @@
       "observaciones": "Mea por todos lados"
     },
     {
-      "id": 5,
-      "nombre": "Pedro",
-      "edad": "33",
-      "tipo": "Perro"
-    },
-    {
-      "id": 10,
-      "nombre": "asdasddsa",
-      "edad": "231",
-      "tipo": "Gato"
-    },
-    {
       "id": 11,
       "nombre": "Pedro",
       "edad": "123",
@@ -68,11 +56,11 @@
     },
     {
       "id": 14,
-      "nombre": "ads",
+      "nombre": "el gato volador",
       "edad": "2",
       "tipo": "Gato",
       "vacunado": "true",
-      "observaciones": "dsssdsaadsdsa"
+      "observaciones": "no es ni un pajaro ni un avion"
     },
     {
       "id": 15,
@@ -92,11 +80,11 @@
     },
     {
       "id": 18,
-      "nombre": "addsa",
-      "edad": "2",
+      "nombre": "Machito",
+      "edad": "5",
       "tipo": "Perro",
-      "vacunado": false,
-      "observaciones": "23132"
+      "vacunado": "true",
+      "observaciones": "Muy macho"
     }
   ]
 }

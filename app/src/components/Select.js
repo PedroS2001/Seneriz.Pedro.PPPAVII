@@ -13,7 +13,6 @@ const MySelect = ({ tipoU, handleChange }) => {
             .then(res => res.json())
             .then((data) => {
                 setTipos(data);
-                console.log('tipos', data);
             })
     }, [])
 

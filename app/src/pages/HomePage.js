@@ -23,7 +23,6 @@ const HomePage = () => {
         fetch(URL + 'mascotas')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setMascotas(data);
             })
             .catch(err => console.log(err))
@@ -32,10 +31,9 @@ const HomePage = () => {
 
 
     const agregarMascota = (mascota) => {
-        console.log(mascota)
         let arrayOrdenado = mascotas.sort((a, b) => a.id - b.id);
         let proximoId = arrayOrdenado[arrayOrdenado.length - 1].id + 1;
-        
+
         mascota.id = proximoId;
         fetch(URL + 'mascotas/', {
             method: "POST",
@@ -54,15 +52,11 @@ const HomePage = () => {
                 cargarMascotas();
             })
 
-
-
-
         setMascotas((mascotas) => [...mascotas, mascota]);
     }
 
-    const modificarMascota = (mascotaEditada) => {
-        console.log("modificando");
 
+    const modificarMascota = (mascotaEditada) => {
         fetch(URL + 'mascotas/' + mascotaEditada.id, {
             method: "PUT",
             headers: {
@@ -83,13 +77,10 @@ const HomePage = () => {
             .finally(() => {
                 cargarMascotas();
             })
-
-
     }
 
-    const eliminarMascota = (id) => {
-        console.log("eliminado" + id);
 
+    const eliminarMascota = (id) => {
         fetch(URL + 'mascotas/' + id, {
             method: "DELETE",
             headers: {
@@ -107,14 +98,13 @@ const HomePage = () => {
             .finally(() => {
                 cargarMascotas();
             })
-
-
-
     }
+
 
     const setMascotaEditar = (mascotaa) => {
         setMascotaU(mascotaa)
     }
+
 
     return (
         <>

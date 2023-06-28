@@ -19,7 +19,6 @@ const Form = ({ mascotaU, agregarMascota, modificarMascota }) => {
     const { id, nombre, edad, tipo, vacunado, observaciones } = form;
 
     useEffect(() => {
-        console.log('asddsa', mascotaU)
         if (mascotaU)
             setForm(mascotaU)
     }, [mascotaU])
@@ -29,7 +28,6 @@ const Form = ({ mascotaU, agregarMascota, modificarMascota }) => {
     };
 
     const handleChange = (e) => {
-        console.log(e);
         setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
     };
 
