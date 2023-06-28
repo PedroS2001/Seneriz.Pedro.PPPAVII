@@ -47,14 +47,6 @@
       "observaciones": "Mea por todos lados"
     },
     {
-      "id": 11,
-      "nombre": "Pedro",
-      "edad": "123",
-      "tipo": "Roedor",
-      "vacunado": "true",
-      "observaciones": "Observacionesssadsadsasd"
-    },
-    {
       "id": 14,
       "nombre": "el gato volador",
       "edad": "2",
@@ -77,14 +69,6 @@
       "tipo": "Pez",
       "vacunado": false,
       "observaciones": "caperucita red"
-    },
-    {
-      "id": 18,
-      "nombre": "Machito",
-      "edad": "5",
-      "tipo": "Perro",
-      "vacunado": "true",
-      "observaciones": "Muy macho"
     }
   ]
 }

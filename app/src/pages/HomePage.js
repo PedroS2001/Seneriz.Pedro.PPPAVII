@@ -31,6 +31,7 @@ const HomePage = () => {
 
 
     const agregarMascota = (mascota) => {
+        setLoading(true);
         let arrayOrdenado = mascotas.sort((a, b) => a.id - b.id);
         let proximoId = arrayOrdenado[arrayOrdenado.length - 1].id + 1;
 
@@ -57,6 +58,7 @@ const HomePage = () => {
 
 
     const modificarMascota = (mascotaEditada) => {
+        setLoading(true);
         fetch(URL + 'mascotas/' + mascotaEditada.id, {
             method: "PUT",
             headers: {
@@ -81,6 +83,7 @@ const HomePage = () => {
 
 
     const eliminarMascota = (id) => {
+        setLoading(true);
         fetch(URL + 'mascotas/' + id, {
             method: "DELETE",
             headers: {
@@ -108,20 +111,22 @@ const HomePage = () => {
 
     return (
         <>
-            <section>
-                <Form
-                    mascotaU={mascotaU}
-                    agregarMascota={agregarMascota}
-                    modificarMascota={modificarMascota}
-                >
-                </Form>
+            <section className='row centrar'>
+                <div className='col-6'>
+                    <Form
+                        mascotaU={mascotaU}
+                        agregarMascota={agregarMascota}
+                        modificarMascota={modificarMascota}
+                    >
+                    </Form>
+                </div>
             </section>
-            <section>
+            <section className='row centrar'>
                 {
                     loading ? (
                         <Loader></Loader>
                     ) : (
-                        <Table mascotas={mascotas} setMascotaEditar={setMascotaEditar} eliminarMascota={eliminarMascota}  ></Table>
+                        <Table mascotas={mascotas} setMascotaEditar={setMascotaEditar} eliminarMascota={eliminarMascota}   ></Table>
                     )
                 }
             </section>

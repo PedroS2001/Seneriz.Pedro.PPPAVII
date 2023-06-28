@@ -13,8 +13,8 @@ const Row = ({ mascota, setMascotaEditar, eliminarMascota }) => {
     }
 
     return (
-        <tr>
-            <td>{mascota.nombre}</td>
+        <tr >
+            <td className='table-info'>{mascota.nombre}</td>
             <td>{mascota.tipo}</td>
             <td>
                 <Link className='btn btn-primary' to={'detail/' + mascota.id} > Detalles </Link>

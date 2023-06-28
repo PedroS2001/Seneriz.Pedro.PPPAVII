@@ -12,7 +12,7 @@ const Table = ({ mascotas, setMascotaEditar, eliminarMascota }) => {
                     <th colSpan={3} >Acciones</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='table table-hover'>
                 {
                     mascotas.map((mascota) => {
                         return <Row key={mascota.id} mascota={mascota} setMascotaEditar={setMascotaEditar} eliminarMascota={eliminarMascota} />

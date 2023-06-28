@@ -47,29 +47,36 @@ const Form = ({ mascotaU, agregarMascota, modificarMascota }) => {
 
     return (
         <form onSubmit={handleSubmit} >
-            <input 
+            <label htmlFor='nombre' className='label' > Nombre </label>
+            <input
+                id='nombre'
                 type="text"
                 name="nombre"
                 placeholder="Ingrese nombre..."
-                className='form-control'
+                className='form-control '
                 value={nombre}
                 onChange={handleChange}
             />
+            <label htmlFor='edad' className='label' > Edad </label>
             <input
+                id='edad'
                 type="number"
                 name="edad"
                 placeholder="Ingrese edad..."
-                className='form-control'
+                className='form-control '
                 value={edad}
                 onChange={handleChange}
             />
-            <MySelect tipoU={tipo} handleChange={handleChange} />
-            <label htmlFor='vacunado' value="Esta vacunado?" >Esta vacunado </label>
-            <select name="vacunado" className='form-control' value={vacunado} onChange={handleChange} >
+            <label htmlFor='tipo' className='label'> Tipo </label>
+            <MySelect id='tipo' tipoU={tipo} handleChange={handleChange} />
+            <label htmlFor='vacunado' className='label'> Esta vacunado? </label>
+            <select name="vacunado" id='vacunado' className='form-control' value={vacunado} onChange={handleChange} >
                 <option value={true}> Si </option>
                 <option value={false}> No </option>
             </select>
+            <label htmlFor='observaciones' className='label' > Observaciones </label>
             <input
+                id='observaciones'
                 type="text"
                 name="observaciones"
                 placeholder="Observaciones..."
@@ -77,9 +84,10 @@ const Form = ({ mascotaU, agregarMascota, modificarMascota }) => {
                 value={observaciones}
                 onChange={handleChange}
             />
-
-            <button type="submit" className="btn btn-primary mb-3">Enviar</button>
-            <button type="reset" className="btn btn-secondary mb-3" onClick={handleReset} >Limpiar</button>
+            <div className='centrar mt-3 gap-3'>
+                <button type="submit" className="btn btn-primary mb-3"> Enviar </button>
+                <button type="reset" className="btn btn-secondary mb-3" onClick={handleReset} > Limpiar </button>
+            </div>
 
         </form>
     );
