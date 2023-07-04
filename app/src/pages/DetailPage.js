@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Loader from '../components/Loader';
 
-const URL = 'http://localhost:3002/';
+const URL = 'http://localhost:3001/api/';
 
 const DetailPage = () => {
 
@@ -15,12 +15,17 @@ const DetailPage = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        let token = localStorage.getItem("token");
         setLoading(true);
-        fetch(URL + 'mascotas/?id=' + id)
+        fetch(URL + 'mascota/' + id, {
+            headers: {
+                authorization: "bearer " + token
+            }
+        })
             .then(data => data.json())
             .then((mascota) => {
-                setMascota(mascota[0]);
-                console.log(mascota[0])
+                setMascota(mascota);
+                console.log(mascota)
             })
             .finally(() => setLoading(false))
     }, [id])

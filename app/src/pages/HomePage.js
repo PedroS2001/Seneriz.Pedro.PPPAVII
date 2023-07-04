@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import Loader from '../components/Loader';
 import Form from '../components/Form';
 
-const URL = 'http://localhost:3002/';
+const URL = 'http://localhost:3001/api/';
 
 const HomePage = () => {
 
@@ -20,7 +20,12 @@ const HomePage = () => {
 
     const cargarMascotas = () => {
         setLoading(true);
-        fetch(URL + 'mascotas')
+        let token = localStorage.getItem("token");
+        fetch(URL + 'mascota', {
+            headers: {
+                "authorization": "bearer " + token
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setMascotas(data);
@@ -36,10 +41,12 @@ const HomePage = () => {
         let proximoId = arrayOrdenado[arrayOrdenado.length - 1].id + 1;
 
         mascota.id = proximoId;
-        fetch(URL + 'mascotas/', {
+        let token = localStorage.getItem("token");
+        fetch(URL + 'mascota/', {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",
+                "authorization": "bearer " + token
             },
             body: JSON.stringify(mascota)
         })
@@ -59,10 +66,12 @@ const HomePage = () => {
 
     const modificarMascota = (mascotaEditada) => {
         setLoading(true);
-        fetch(URL + 'mascotas/' + mascotaEditada.id, {
+        let token = localStorage.getItem("token");
+        fetch(URL + 'mascota/' + mascotaEditada.id, {
             method: "PUT",
             headers: {
                 "Content-Type": "Application/json",
+                "authorization": "bearer " + token
             },
             body: JSON.stringify(mascotaEditada)
         })
@@ -84,10 +93,12 @@ const HomePage = () => {
 
     const eliminarMascota = (id) => {
         setLoading(true);
-        fetch(URL + 'mascotas/' + id, {
+        let token = localStorage.getItem("token");
+        fetch(URL + 'mascota/' + id, {
             method: "DELETE",
             headers: {
                 "Content-Type": "Application/json",
+                "authorization": "bearer " + token
             }
         })
             .then(res => res.json())

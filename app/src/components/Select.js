@@ -2,14 +2,20 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const URL = 'http://localhost:3002/';
+const URL = 'http://localhost:3001/api/';
 
 const MySelect = ({ tipoU, handleChange }) => {
 
     const [tipos, setTipos] = useState([]);
 
     useEffect(() => {
-        fetch(URL + 'tipos')
+        let token = localStorage.getItem("token");
+        console.log("", token)
+        fetch(URL + 'mascota/tipos', {
+            headers: {
+                authorization: "bearer " + token
+            }
+        })
             .then(res => res.json())
             .then((data) => {
                 setTipos(data);

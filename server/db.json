@@ -55,20 +55,12 @@
       "observaciones": "no es ni un pajaro ni un avion"
     },
     {
-      "id": 15,
-      "nombre": "Juan martin",
-      "edad": "99",
+      "id": 18,
+      "nombre": "Pedro",
+      "edad": "22",
       "tipo": "Reptil",
       "vacunado": "true",
-      "observaciones": "Es un reptil muy vago"
-    },
-    {
-      "id": 17,
-      "nombre": "Caperucita",
-      "edad": "0",
-      "tipo": "Pez",
-      "vacunado": false,
-      "observaciones": "caperucita red"
+      "observaciones": "Observacionessdasd a"
     }
   ]
 }
