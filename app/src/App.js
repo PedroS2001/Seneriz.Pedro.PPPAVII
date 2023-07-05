@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom/cjs/rea
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       <Router>
         <Header></Header>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={LoginPage} />
+          <Route exact path="/Login" component={LoginPage} />
+          <Route exact path="/Home" component={HomePage} />
           <Route exact path="/detail/:id" component={DetailPage} />
           <Route path="*" component={ErrorPage} />
         </Switch>

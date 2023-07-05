@@ -14,9 +14,11 @@ const Table = ({ mascotas, setMascotaEditar, eliminarMascota }) => {
             </thead>
             <tbody className='table table-hover'>
                 {
-                    mascotas.map((mascota) => {
-                        return <Row key={mascota.id} mascota={mascota} setMascotaEditar={setMascotaEditar} eliminarMascota={eliminarMascota} />
-                    })
+                    mascotas.length > 0 ? (
+                        mascotas.map((mascota) => {
+                            return <Row key={mascota.id} mascota={mascota} setMascotaEditar={setMascotaEditar} eliminarMascota={eliminarMascota} />
+                        })
+                    ) : (<></>)
                 }
             </tbody>
         </table>

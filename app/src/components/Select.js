@@ -25,9 +25,11 @@ const MySelect = ({ tipoU, handleChange }) => {
     return (
         <select name='tipo' value={tipoU} className='form-control' onChange={handleChange}>
             {
-                tipos.map((tipo) => {
-                    return <option className='form-control' key={tipo.id} value={tipo.descripcion} >{tipo.descripcion}</option>
-                })
+                tipos.length ? (
+                    tipos.map((tipo) => {
+                        return <option className='form-control' key={tipo.id} value={tipo.descripcion} >{tipo.descripcion}</option>
+                    })
+                ) : (<></>)
             }
         </select>
     );

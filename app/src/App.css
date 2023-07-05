@@ -32,26 +32,43 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-section.row{
+section.row {
   margin: 0;
 }
-.centrar{
+
+.centrar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.label{
+.label {
   width: 100%;
   text-align: start;
   margin-top: .8em;
 }
 
-.card{
+.card {
   width: 50%;
+}
+
+.toggleLogin {}
+
+.containerLogin {
+  width: 100%;
+  padding: 2% 20%;
+  flex-flow: column wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerLogin * {
+  width: 100%;
 }

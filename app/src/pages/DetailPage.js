@@ -54,7 +54,7 @@ const DetailPage = () => {
                                     <span className="row card-text label"> {mascota.observaciones} </span>
                                 </div>
 
-                                <Link to='/'>
+                                <Link to='/home'>
                                     <button className="btn btn-primary mt-2">Volver</button>
                                 </Link>
                             </div>

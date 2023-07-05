@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Loader from '../components/Loader';
 import Form from '../components/Form';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const URL = 'http://localhost:3001/api/';
 
@@ -13,14 +14,14 @@ const HomePage = () => {
     const [mascotaU, setMascotaU] = useState(null);
 
     const [loading, setLoading] = useState(false);
+    const [token, setToken] = useState("");
+    let history = useHistory();
 
     useEffect(() => {
-        cargarMascotas();
-    }, [])
+        setToken(localStorage.getItem("token"));
+        console.log('token', token)
 
-    const cargarMascotas = () => {
         setLoading(true);
-        let token = localStorage.getItem("token");
         fetch(URL + 'mascota', {
             headers: {
                 "authorization": "bearer " + token
@@ -28,9 +29,27 @@ const HomePage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setMascotas(data);
+                if (data)
+                    setMascotas(data);
             })
             .catch(err => console.log(err))
+            .finally(() => setLoading(false))
+
+    }, [token])
+
+    const cargarMascotas = () => {
+        setLoading(true);
+        fetch(URL + 'mascota', {
+            headers: {
+                "authorization": "bearer " + token
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data)
+                    setMascotas(data);
+            })
+            .catch(err => console.log("eee", err))
             .finally(() => setLoading(false))
     }
 
@@ -41,8 +60,7 @@ const HomePage = () => {
         let proximoId = arrayOrdenado[arrayOrdenado.length - 1].id + 1;
 
         mascota.id = proximoId;
-        let token = localStorage.getItem("token");
-        fetch(URL + 'mascota/', {
+        fetch(URL + 'mascota', {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",
@@ -66,7 +84,6 @@ const HomePage = () => {
 
     const modificarMascota = (mascotaEditada) => {
         setLoading(true);
-        let token = localStorage.getItem("token");
         fetch(URL + 'mascota/' + mascotaEditada.id, {
             method: "PUT",
             headers: {
@@ -93,7 +110,6 @@ const HomePage = () => {
 
     const eliminarMascota = (id) => {
         setLoading(true);
-        let token = localStorage.getItem("token");
         fetch(URL + 'mascota/' + id, {
             method: "DELETE",
             headers: {
